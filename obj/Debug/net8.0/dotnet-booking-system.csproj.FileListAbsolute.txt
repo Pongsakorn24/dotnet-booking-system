@@ -1,0 +1,14 @@
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/bin/Debug/net8.0/dotnet-booking-system
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/bin/Debug/net8.0/dotnet-booking-system.deps.json
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/bin/Debug/net8.0/dotnet-booking-system.runtimeconfig.json
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/bin/Debug/net8.0/dotnet-booking-system.dll
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/bin/Debug/net8.0/dotnet-booking-system.pdb
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/obj/Debug/net8.0/dotnet-booking-system.GeneratedMSBuildEditorConfig.editorconfig
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/obj/Debug/net8.0/dotnet-booking-system.AssemblyInfoInputs.cache
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/obj/Debug/net8.0/dotnet-booking-system.AssemblyInfo.cs
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/obj/Debug/net8.0/dotnet-booking-system.csproj.CoreCompileInputs.cache
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/obj/Debug/net8.0/dotnet-booking-system.dll
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/obj/Debug/net8.0/refint/dotnet-booking-system.dll
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/obj/Debug/net8.0/dotnet-booking-system.pdb
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/obj/Debug/net8.0/dotnet-booking-system.genruntimeconfig.cache
+/Users/11427366/Documents/Projects/poc/dotnet-booking-system/obj/Debug/net8.0/ref/dotnet-booking-system.dll
