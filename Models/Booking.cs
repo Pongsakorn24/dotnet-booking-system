@@ -21,6 +21,8 @@ public class Booking
 
 public class BookingResult
 {
+    public double Price { get; set; }
+
     public double NetPrice { get; set; }
 
     public double Fee { get; set; }

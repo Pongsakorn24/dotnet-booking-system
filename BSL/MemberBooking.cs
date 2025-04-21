@@ -6,7 +6,7 @@ public class MemberBooking : IBookingPrice
 
     public double CalculatePriceAfterDiscount(double total) => total - CalculateDiscount(total);
 
-    public double CalculatePrice(double basePrice) => CalculatePriceAfterDiscount(basePrice) + fee; //Price after the discount + fee.
+    public double CalculatePrice(double basePrice) => CalculatePriceAfterDiscount(basePrice); //Price after the discount.
 
     public double GetFee() => fee;
 }
