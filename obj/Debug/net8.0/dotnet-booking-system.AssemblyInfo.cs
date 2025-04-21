@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dotnet-booking-system")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b4681cb9c7cec9cefe36d1cbfc6f79a58ed6b4b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4f33d7b9c914687c40b983148b9047ea04bb8bf9")]
 [assembly: System.Reflection.AssemblyProductAttribute("dotnet-booking-system")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dotnet-booking-system")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
