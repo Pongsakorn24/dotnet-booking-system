@@ -1,11 +1,26 @@
-public class BookingPriceFactory {
-    public static IBookingPrice GetCalculator(CustomerType customerType){
+using Microsoft.Extensions.DependencyInjection;
+
+public interface IBookingPriceFactory
+{
+    IBookingPrice GetCalculator(CustomerType customerType);
+}
+
+public class BookingPriceFactory : IBookingPriceFactory
+{
+    private readonly IServiceProvider _serviceProvider;
+
+    public BookingPriceFactory(IServiceProvider serviceProvider)
+    {
+        _serviceProvider = serviceProvider;
+    }
+
+    public IBookingPrice GetCalculator(CustomerType customerType)
+    {
         return customerType switch
         {
-            CustomerType.General => new GeneralBooking(),
-            CustomerType.Member => new MemberBooking(),
-            CustomerType.VIP => new VIPBooking(),
-            _ => throw new ArgumentException("Invalid customer type")
+            CustomerType.Member => _serviceProvider.GetRequiredService<MemberBooking>(),
+            CustomerType.VIP => _serviceProvider.GetRequiredService<VIPBooking>(),
+            _ => _serviceProvider.GetRequiredService<GeneralBooking>(),
         };
     }
 }

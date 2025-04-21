@@ -8,10 +8,17 @@ public class BookingServiceTests
     [Fact]
     public void GeneralCustomer_ShouldPayFullPrice()
     {
-        var mockShippingCalculator = new Mock<ShippingCalculator>();
-        var mockFeeCalculator = new Mock<FeeCalculator>();
+        var mockfactory = new Mock<IBookingPriceFactory>();
+        var mockShippingCalculator = new Mock<IShippingCalculator>();
+        var mockFeeCalculator = new Mock<IFeeCalculator>();
 
-        var service = new BookingService(mockShippingCalculator.Object, mockFeeCalculator.Object);
+        mockfactory.Setup(f => f.GetCalculator(CustomerType.General)).Returns(new GeneralBooking());
+
+        var service = new BookingService(
+            mockfactory.Object,
+            mockShippingCalculator.Object,
+            mockFeeCalculator.Object
+        );
 
         var booking = new Booking("John", 1000, CustomerType.General);
         var result = service.ProcessBooking(booking);
@@ -22,10 +29,17 @@ public class BookingServiceTests
     [Fact]
     public void MemberCustomer_ShouldGet10PercentDiscount()
     {
-        var mockShippingCalculator = new Mock<ShippingCalculator>();
-        var mockFeeCalculator = new Mock<FeeCalculator>();
+        var mockfactory = new Mock<IBookingPriceFactory>();
+        var mockShippingCalculator = new Mock<IShippingCalculator>();
+        var mockFeeCalculator = new Mock<IFeeCalculator>();
 
-        var service = new BookingService(mockShippingCalculator.Object, mockFeeCalculator.Object);
+        mockfactory.Setup(f => f.GetCalculator(CustomerType.Member)).Returns(new MemberBooking());
+
+        var service = new BookingService(
+            mockfactory.Object,
+            mockShippingCalculator.Object,
+            mockFeeCalculator.Object
+        );
 
         var booking = new Booking("John", 1000, CustomerType.Member);
         var result = service.ProcessBooking(booking);
@@ -36,10 +50,17 @@ public class BookingServiceTests
     [Fact]
     public void VIPCustomer_ShouldGet20PercentDiscount()
     {
-        var mockShippingCalculator = new Mock<ShippingCalculator>();
-        var mockFeeCalculator = new Mock<FeeCalculator>();
+        var mockfactory = new Mock<IBookingPriceFactory>();
+        var mockShippingCalculator = new Mock<IShippingCalculator>();
+        var mockFeeCalculator = new Mock<IFeeCalculator>();
 
-        var service = new BookingService(mockShippingCalculator.Object, mockFeeCalculator.Object);
+        mockfactory.Setup(f => f.GetCalculator(CustomerType.VIP)).Returns(new VIPBooking());
+
+        var service = new BookingService(
+            mockfactory.Object,
+            mockShippingCalculator.Object,
+            mockFeeCalculator.Object
+        );
 
         var booking = new Booking("Emma", 1000, CustomerType.VIP);
         var result = service.ProcessBooking(booking);
@@ -50,10 +71,17 @@ public class BookingServiceTests
     [Fact]
     public void VIPCustomer_ShouldGetFee0()
     {
-        var mockShippingCalculator = new Mock<ShippingCalculator>();
-        var mockFeeCalculator = new Mock<FeeCalculator>();
+        var mockfactory = new Mock<IBookingPriceFactory>();
+        var mockShippingCalculator = new Mock<IShippingCalculator>();
+        var mockFeeCalculator = new Mock<IFeeCalculator>();
 
-        var service = new BookingService(mockShippingCalculator.Object, mockFeeCalculator.Object);
+        mockfactory.Setup(f => f.GetCalculator(CustomerType.VIP)).Returns(new VIPBooking());
+
+        var service = new BookingService(
+            mockfactory.Object,
+            mockShippingCalculator.Object,
+            mockFeeCalculator.Object
+        );
 
         var booking = new Booking("Emma", 1000, CustomerType.VIP);
         var result = service.ProcessBooking(booking);

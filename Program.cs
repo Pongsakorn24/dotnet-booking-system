@@ -5,11 +5,15 @@ var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((_, services) =>
     {
         services.AddTransient<BookingService>();
-        services.AddTransient<ShippingCalculator>();
-        services.AddTransient<FeeCalculator>();
-        services.AddTransient<IBookingPrice, GeneralBooking>();
-        services.AddTransient<IBookingPrice, MemberBooking>();
-        services.AddTransient<IBookingPrice, VIPBooking>();
+        services.AddTransient<GeneralBooking>();
+        services.AddTransient<MemberBooking>();
+        services.AddTransient<VIPBooking>();
+
+
+        services.AddTransient<IShippingCalculator, ShippingCalculator>();
+        services.AddTransient<IFeeCalculator, FeeCalculator>();
+        services.AddTransient<IBookingPriceFactory, BookingPriceFactory>();
+
     })
     .Build();
 
